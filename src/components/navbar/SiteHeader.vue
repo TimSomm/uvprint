@@ -1,265 +1,250 @@
 <template>
-	<header class="SiteHeader variant--Overlay theme--Transparent">
-		<div class="SiteHeader__container">
-			<div class="SiteHeader__navContainer">
-				<a href="#" class="SiteHeader__logoLink">
-					<img src="./../../assets/img/logo.gif" alt="logo" class="SiteHeader__logo" />
-				</a>
-				<nav class="SiteHeader__nav">
-					<ul class="SiteHeader__navList">
-						<li class="SiteHeader__navItem">
-							<button class="SiteHeader__navItem_link">Főoldal</button>
-						</li>
-						<li class="SiteHeader__navItem">
-							<button
-								class="SiteHeader__navItem_link"
-								aria-haspopup="true"
-								@mouseover="overServicesLink"
-								@mouseleave="leaveServicesLink"
-							>
-								Szolgáltatások
-							</button>
-						</li>
-						<li class="SiteHeader__navItem">
-							<button class="SiteHeader__navItem_link">Partnerek</button>
-						</li>
-						<li class="SiteHeader__navItem">
-							<button class="SiteHeader__navItem_link">Kapcsolat</button>
-						</li>
-						<li class="SiteHeader__navItem">
-							<button class="SiteHeader__navItem_link SiteHeader__langNav">
-								<img src="./../../assets/img/en.png" alt="en" />
-							</button>
-						</li>
-					</ul>
-				</nav>
-				<div class="SiteHeader__menuNav">
-					<a
-						class="MenuButton"
-						href="#"
-						title="Open mobile navigation"
-						data-js-target="SiteHeader.menuButton"
-					>
-						<svg width="16" height="10" viewBox="0 0 16 10">
-							<title>Open mobile navigation</title>
-							<g fill="var(--knockoutColor)" fill-rule="evenodd">
-								<rect y="8" width="16" height="2" rx="1"></rect>
-								<rect y="4" width="16" height="2" rx="1"></rect>
-								<rect width="16" height="2" rx="1"></rect>
-							</g>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-		<SiteHeaderMenu
-			id="SiteHeaderMenu"
-			:aria-hidden="isSiteMenuHidden"
-			v-model="overSiteMenu_"
-			@leavingServices="close"
-		/>
-	</header>
+  <header class="SiteHeader variant--Overlay theme--Transparent">
+    <div class="SiteHeader__container">
+      <div class="SiteHeader__navContainer">
+        <a href="#" class="SiteHeader__logoLink">
+          <img src="./../../assets/img/logo.gif" alt="logo" class="SiteHeader__logo" />
+        </a>
+        <nav class="SiteHeader__nav">
+          <ul class="SiteHeader__navList">
+            <li class="SiteHeader__navItem">
+              <button class="SiteHeader__navItem_link">Főoldal</button>
+            </li>
+            <li class="SiteHeader__navItem">
+              <button
+                class="SiteHeader__navItem_link"
+                aria-haspopup="true"
+                @mouseover="overServicesLink"
+                @mouseleave="leaveServicesLink"
+              >
+                Szolgáltatások
+              </button>
+            </li>
+            <li class="SiteHeader__navItem">
+              <button class="SiteHeader__navItem_link">Partnerek</button>
+            </li>
+            <li class="SiteHeader__navItem">
+              <button class="SiteHeader__navItem_link">Kapcsolat</button>
+            </li>
+            <li class="SiteHeader__navItem">
+              <button class="SiteHeader__navItem_link SiteHeader__langNav">
+                <img src="./../../assets/img/en.png" alt="en" />
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="SiteHeader__menuNav">
+          <a
+            class="MenuButton"
+            href="#"
+            title="Open mobile navigation"
+            data-js-target="SiteHeader.menuButton"
+          >
+            <svg width="16" height="10" viewBox="0 0 16 10">
+              <title>Open mobile navigation</title>
+              <g fill="var(--knockoutColor)" fill-rule="evenodd">
+                <rect y="8" width="16" height="2" rx="1"></rect>
+                <rect y="4" width="16" height="2" rx="1"></rect>
+                <rect width="16" height="2" rx="1"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <SiteHeaderMenu id="SiteHeaderMenu" :aria-hidden="isSiteMenuHidden" @leavingServices="close" />
+  </header>
 </template>
 
 <script>
 import SiteHeaderMenu from './SiteHeaderMenu.vue';
 
 export default {
-	name: 'SiteHeader',
-	components: {
-		SiteHeaderMenu,
-	},
-	data() {
-		return {
-			isSiteMenuHidden: 'true',
-			overSiteMenu: false,
-		};
-	},
-	computed: {
-		overSiteMenu_: {
-			get: function () {
-				return this.overSiteMenu;
-			},
-			set: function (val) {
-				this.overSiteMenu = val;
-			},
-		},
-	},
-	methods: {
-		overServicesLink() {
-			this.isSiteMenuHidden = 'false';
-		},
-		leaveServicesLink() {
-			setTimeout(() => {
-				if (!this.overSiteMenu) {
-					this.isSiteMenuHidden = 'true';
-				}
-			}, 250);
-		},
-		close(event) {
-			this.overSiteMenu_ = event;
-			this.leaveServicesLink();
-		},
-	},
+  name: 'SiteHeader',
+  components: {
+    SiteHeaderMenu,
+  },
+  data() {
+    return {
+      isSiteMenuHidden: 'true',
+      overSiteMenu: false,
+    };
+  },
+  methods: {
+    overServicesLink() {
+      this.isSiteMenuHidden = 'false';
+    },
+    leaveServicesLink() {
+      setTimeout(() => {
+        if (!this.overSiteMenu) {
+          this.isSiteMenuHidden = 'true';
+        }
+      }, 250);
+    },
+    close(event) {
+      this.overSiteMenu = event;
+      this.leaveServicesLink();
+    },
+  },
 };
 </script>
 
 <style scoped>
 #SiteHeaderMenu[aria-hidden='true'] {
-	opacity: 0;
+  opacity: 0;
 }
 
 #SiteHeaderMenu[aria-hidden='false'] {
-	opacity: 1;
+  opacity: 1;
 }
 
 .theme--Transparent {
-	--backgroundColor: none;
-	--linkColor: #fff;
-	--linkHoverColor: var(--linkColor);
-	--linkHoverOpacity: 0.6;
-	--buttonColor: hsla(0, 0%, 100%, 0.2);
-	--buttonHoverColor: hsla(0, 0%, 100%, 0.4);
-	--accentColor: #fff;
-	--knockoutColor: #fff;
-	--textColor: #fff;
-	--guideSolidColor: rgba(66, 71, 112, 0.06);
-	--guideDashedColor: rgba(66, 71, 112, 0.09);
-	--titleColor: #fff;
-	--maskFadeColor: rgba(0, 0, 0, 0.4);
-	--stripeBackground: #fff;
+  --backgroundColor: none;
+  --linkColor: #fff;
+  --linkHoverColor: var(--linkColor);
+  --linkHoverOpacity: 0.6;
+  --buttonColor: hsla(0, 0%, 100%, 0.2);
+  --buttonHoverColor: hsla(0, 0%, 100%, 0.4);
+  --accentColor: #fff;
+  --knockoutColor: #fff;
+  --textColor: #fff;
+  --guideSolidColor: rgba(66, 71, 112, 0.06);
+  --guideDashedColor: rgba(66, 71, 112, 0.09);
+  --titleColor: #fff;
+  --maskFadeColor: rgba(0, 0, 0, 0.4);
+  --stripeBackground: #fff;
 }
 
 .SiteHeader {
-	--siteMenuTransition: 250ms;
-	--siteMenuArrowSpacing: 13px;
-	--siteMenuArrowOffset: 0;
-	position: relative;
-	z-index: 100;
-	background-color: var(--backgroundColor);
+  --siteMenuTransition: 250ms;
+  --siteMenuArrowSpacing: 13px;
+  --siteMenuArrowOffset: 0;
+  position: relative;
+  z-index: 100;
+  background-color: var(--backgroundColor);
 }
 
 .SiteHeader.variant--Overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none;
 }
 
 .SiteHeader__container {
-	position: relative;
-	max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
-	margin: 0 auto;
-	padding: 0 var(--columnPaddingNormal);
+  position: relative;
+  max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
+  margin: 0 auto;
+  padding: 0 var(--columnPaddingNormal);
 }
 
 .SiteHeader__navContainer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	min-height: 56px;
-	padding: 32px var(--columnPaddingNormal) 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  padding: 32px var(--columnPaddingNormal) 12px;
 }
 
 .SiteHeader__logoLink {
-	display: block;
-	outline: none;
-	padding: 4px;
-	margin: -4px;
+  display: block;
+  outline: none;
+  padding: 4px;
+  margin: -4px;
 }
 
 .SiteHeader__logo {
-	display: block;
-	max-width: 160px;
-	height: 40px;
+  display: block;
+  max-width: 160px;
+  height: 40px;
 }
 
 nav {
-	display: block;
+  display: block;
 }
 
 .SiteHeader__navList {
-	display: var(--desktopNavDisplay, flex);
-	align-items: center;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  display: var(--desktopNavDisplay, flex);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .SiteHeader__navItem {
-	opacity: 1;
-	transition: all 200ms ease;
+  opacity: 1;
+  transition: all 200ms ease;
 }
 
 .SiteHeader__navItem:hover {
-	opacity: var(--linkHoverOpacity);
+  opacity: var(--linkHoverOpacity);
 }
 
 .SiteHeader__navItem_link[aria-haspopup='true'] {
-	cursor: default;
-	transition: var(--hoverTransition);
-	transition-property: color, opacity;
+  cursor: default;
+  transition: var(--hoverTransition);
+  transition-property: color, opacity;
 }
 
 .SiteHeader__navItem_link,
 .SiteHeader__navItem_link.Link {
-	padding: 10px 20px;
-	font: var(--fontWeightBold) 15px / 1.6 var(--fontFamily);
-	letter-spacing: 0.2px;
-	color: var(--navColor);
-	cursor: pointer;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-color: transparent;
-	border: none;
-	outline: none;
+  padding: 10px 20px;
+  font: var(--fontWeightBold) 15px / 1.6 var(--fontFamily);
+  letter-spacing: 0.2px;
+  color: var(--navColor);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .SiteHeader__langNav {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .SiteHeader__langNav img {
-	height: 40px;
+  height: 40px;
 }
 
 .SiteHeader__menuNav {
-	display: var(--mobileNavDisplay, initial);
+  display: var(--mobileNavDisplay, initial);
 }
 
 .MenuButton {
-	--buttonHeight: 32px;
-	display: inline-flex;
-	align-items: center;
-	height: var(--buttonHeight);
-	padding: 0 calc(var(--buttonHeight) / 2);
-	border-radius: calc(var(--buttonHeight) / 2);
-	background-color: var(--buttonColor);
-	color: var(--knockoutColor);
-	transition: var(--hoverTransition);
-	transition-property: background-color, opacity;
+  --buttonHeight: 32px;
+  display: inline-flex;
+  align-items: center;
+  height: var(--buttonHeight);
+  padding: 0 calc(var(--buttonHeight) / 2);
+  border-radius: calc(var(--buttonHeight) / 2);
+  background-color: var(--buttonColor);
+  color: var(--knockoutColor);
+  transition: var(--hoverTransition);
+  transition-property: background-color, opacity;
 }
 
 .MenuButton:hover {
-	background-color: var(--buttonHoverColor);
+  background-color: var(--buttonHoverColor);
 }
 
 @media (min-width: 900px) {
-	.SiteHeader {
-		--mobileNavDisplay: none;
-	}
+  .SiteHeader {
+    --mobileNavDisplay: none;
+  }
 
-	.SiteHeader__navContainer {
-		padding: 12px var(--columnPaddingNormal);
-	}
+  .SiteHeader__navContainer {
+    padding: 12px var(--columnPaddingNormal);
+  }
 }
 
 @media (max-width: 899px) {
-	.SiteHeader {
-		--desktopNavDisplay: none;
-	}
+  .SiteHeader {
+    --desktopNavDisplay: none;
+  }
 }
 </style>
