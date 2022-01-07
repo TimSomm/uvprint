@@ -1,6 +1,6 @@
 <template>
   <div class="SiteHeader__menuContainer theme--White">
-    <div class="SiteHeader__arrow"></div>
+    <div class="SiteHeader__arrow" :style="cssVars"></div>
     <div class="SiteMenu SiteHeader__menu" @mouseover="overSiteMenu" @mouseleave="leaveSiteMenu">
       <div class="Card Card--shadowXLarge SiteMenu__card">
         <div class="SiteMenu__section">
@@ -20,9 +20,19 @@ import SiteServiceNavLayout from './SiteServiceNavLayout.vue';
 
 export default {
   name: 'SiteHeaderMenu',
-  data: () => ({ value: undefined }),
+  data: () => ({
+    value: undefined,
+  }),
+  props: ['offset'],
   components: {
     SiteServiceNavLayout,
+  },
+  computed: {
+    cssVars() {
+      return {
+        'left': this.offset + 'px',
+      };
+    },
   },
   methods: {
     overSiteMenu() {
@@ -96,11 +106,15 @@ export default {
   pointer-events: auto;
 }
 
+.SiteHeader__menuContainer[aria-hidden='false'] .SiteHeader__arrow {
+  transform: translateY(0) rotate(45deg);
+}
+
 .SiteHeader__arrow {
   --siteHeaderArrowBackgroundColor: var(--cardBackground);
   position: absolute;
   top: 8px;
-  left: 50%;
+  left: 0;
   margin: 0 0 0 -6px;
   width: 12px;
   height: 12px;

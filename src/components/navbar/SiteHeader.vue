@@ -12,6 +12,7 @@
             </li>
             <li class="SiteHeader__navItem">
               <button
+                ref="serviceLink"
                 class="SiteHeader__navItem_link"
                 aria-haspopup="true"
                 @mouseover="overServicesLink"
@@ -52,7 +53,12 @@
         </div>
       </div>
     </div>
-    <SiteHeaderMenu id="SiteHeaderMenu" :aria-hidden="isSiteMenuHidden" @leavingServices="close" />
+    <SiteHeaderMenu
+      id="SiteHeaderMenu"
+      :aria-hidden="isSiteMenuHidden"
+      :offset="arrowOfSet"
+      @leavingServices="close"
+    />
   </header>
 </template>
 
@@ -68,11 +74,20 @@ export default {
     return {
       isSiteMenuHidden: 'true',
       overSiteMenu: false,
+      arrowOfSet: 0,
     };
   },
   methods: {
+    getCenter(element) {
+      const left = this.$refs[element].getBoundingClientRect().left;
+      const right = this.$refs[element].getBoundingClientRect().right;
+      const middle = (right - left) / 2;
+      const center = left + middle;
+      return center;
+    },
     overServicesLink() {
       this.isSiteMenuHidden = 'false';
+      this.arrowOfSet = this.getCenter('serviceLink');
     },
     leaveServicesLink() {
       setTimeout(() => {
