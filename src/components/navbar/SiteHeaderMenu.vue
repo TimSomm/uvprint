@@ -1,14 +1,10 @@
 <template>
   <div class="SiteHeader__menuContainer theme--White">
-    <div class="SiteHeader__arrow" :style="cssVars"></div>
+    <div class="SiteHeader__arrow" :style="arrowTransform"></div>
     <div class="SiteMenu SiteHeader__menu" @mouseover="overSiteMenu" @mouseleave="leaveSiteMenu">
-      <div class="Card Card--shadowXLarge SiteMenu__card">
-        <div class="SiteMenu__section">
-          <section class="SiteMenuSection">
-            <div class="SiteMenuSection__body">
-              <SiteServiceNavLayout />
-            </div>
-          </section>
+      <div class="Card Card--shadowXLarge SiteMenu__card" ref="siteMenuCard">
+        <div class="SiteMenu__section" ref="siteMenu">
+          <SiteServiceNavLayout />
         </div>
       </div>
     </div>
@@ -23,16 +19,28 @@ export default {
   data: () => ({
     value: undefined,
   }),
-  props: ['offset'],
+  props: {
+    offset: Number,
+  },
   components: {
     SiteServiceNavLayout,
   },
   computed: {
-    cssVars() {
+    arrowTransform() {
       return {
-        'left': this.offset + 'px',
+        transform: 'translateY(0) translateX(' + this.offset + 'px) rotate(45deg)',
       };
     },
+    siteMenuDimensions() {
+      return {
+        width: this.getWidth('siteMenu') + 'px',
+        height: this.getHeight('siteMenu') + 'px',
+      };
+    },
+  },
+  mounted() {
+    this.$refs.siteMenuCard.style.width = this.siteMenuDimensions.width;
+    this.$refs.siteMenuCard.style.height = this.siteMenuDimensions.height;
   },
   methods: {
     overSiteMenu() {
@@ -42,6 +50,12 @@ export default {
     leaveSiteMenu() {
       this.value = false;
       this.$emit('leavingServices', this.value);
+    },
+    getHeight(el) {
+      return this.$refs[el].clientHeight;
+    },
+    getWidth(el) {
+      return this.$refs[el].clientWidth;
     },
   },
 };
@@ -106,10 +120,6 @@ export default {
   pointer-events: auto;
 }
 
-.SiteHeader__menuContainer[aria-hidden='false'] .SiteHeader__arrow {
-  transform: translateY(0) rotate(45deg);
-}
-
 .SiteHeader__arrow {
   --siteHeaderArrowBackgroundColor: var(--cardBackground);
   position: absolute;
@@ -143,8 +153,7 @@ export default {
   transition-property: transform, width, height;
   will-change: transform, width, height;
   z-index: 2;
-  width: 791px;
-  height: 372px;
+  width: fit-content;
 }
 
 .SiteHeader__menu {
@@ -188,21 +197,5 @@ export default {
   transition: var(--siteMenuTransition);
   transition-property: transform, opacity;
   will-change: transform, opacity;
-}
-
-.SiteMenuSection {
-  --siteMenuSpacing: 24px;
-  position: relative;
-}
-
-.SiteMenuSection__body {
-  padding: var(--siteMenuSpacing);
-}
-
-@media (min-width: 900px) {
-  .SiteMenuSection {
-    display: inline-block;
-    --siteMenuSpacing: 32px;
-  }
 }
 </style>

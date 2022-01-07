@@ -1,14 +1,19 @@
 <template>
-  <div class="SiteServiceNav__layout">
-    <div v-for="data in datas" v-bind:key="data.title">
-      <SiteServiceNavSection
-        :title="data.title"
-        :label="data.label"
-        :body="data.body"
-        :logo="data.logo"
-      />
-    </div>
-  </div>
+  
+    <section class="SiteMenuSection">
+      <div class="SiteMenuSection__body">
+        <div class="SiteServiceNav__layout">
+          <div v-for="data in datas" v-bind:key="data.title">
+            <SiteServiceNavSection
+              :title="data.title"
+              :label="data.label"
+              :body="data.body"
+              :logo="data.logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 </template>
 
 <script>
@@ -52,6 +57,23 @@ export default {
 </script>
 
 <style scoped>
+
+.SiteMenuSection {
+  --siteMenuSpacing: 24px;
+  position: relative;
+}
+
+.SiteMenuSection__body {
+  padding: var(--siteMenuSpacing);
+}
+
+@media (min-width: 900px) {
+  .SiteMenuSection {
+    display: inline-block;
+    --siteMenuSpacing: 32px;
+  }
+}
+
 .SiteServiceNav__layout {
   --columnCount: 3;
   display: inline-grid;

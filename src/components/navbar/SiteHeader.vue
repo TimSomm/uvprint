@@ -5,7 +5,7 @@
         <a href="#" class="SiteHeader__logoLink">
           <img src="./../../assets/img/logo.gif" alt="logo" class="SiteHeader__logo" />
         </a>
-        <nav class="SiteHeader__nav">
+        <nav class="SiteHeader__nav" @mouseleave="leaveHeader">
           <ul class="SiteHeader__navList">
             <li class="SiteHeader__navItem">
               <button class="SiteHeader__navItem_link">Főoldal</button>
@@ -15,14 +15,20 @@
                 ref="serviceLink"
                 class="SiteHeader__navItem_link"
                 aria-haspopup="true"
-                @mouseover="overServicesLink"
-                @mouseleave="leaveServicesLink"
+                @mouseover="overNavLink('serviceLink')"
               >
                 Szolgáltatások
               </button>
             </li>
             <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link">Partnerek</button>
+              <button
+                ref="partnersLink"
+                class="SiteHeader__navItem_link"
+                aria-haspopup="true"
+                @mouseover="overNavLink('partnersLink')"
+              >
+                Partnerek
+              </button>
             </li>
             <li class="SiteHeader__navItem">
               <button class="SiteHeader__navItem_link">Kapcsolat</button>
@@ -85,20 +91,23 @@ export default {
       const center = left + middle;
       return center;
     },
-    overServicesLink() {
+    overNavLink(navlink) {
       this.isSiteMenuHidden = 'false';
-      this.arrowOfSet = this.getCenter('serviceLink');
+      this.arrowOfSet = this.getCenter(navlink);
     },
-    leaveServicesLink() {
+    leaveSiteMenu() {
       setTimeout(() => {
-        if (!this.overSiteMenu) {
+        if (!this.overSiteMenu && !this.overHeader) {
           this.isSiteMenuHidden = 'true';
         }
       }, 250);
     },
+    leaveHeader() {
+      this.leaveSiteMenu();
+    },
     close(event) {
       this.overSiteMenu = event;
-      this.leaveServicesLink();
+      this.leaveSiteMenu();
     },
   },
 };
