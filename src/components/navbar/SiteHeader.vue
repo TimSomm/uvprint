@@ -19,16 +19,16 @@
             </li>
             <li class="SiteHeader__navItem">
               <button
-                ref="partnersLink"
+                ref="galleryLink"
                 class="SiteHeader__navItem_link"
                 aria-haspopup="true"
-                @mouseover="overNavLink('partnersLink')"
+                @mouseover="overNavLink('galleryLink')"
               >
-                Partnerek
+                Galéria
               </button>
             </li>
             <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link">Galéria</button>
+              <button class="SiteHeader__navItem_link">Partnerek</button>
             </li>
             <li class="SiteHeader__navItem">
               <button class="SiteHeader__navItem_link">Kapcsolat</button>
@@ -63,6 +63,7 @@
       id="SiteHeaderMenu"
       :aria-hidden="isSiteMenuHidden"
       :offset="arrowOfSet"
+      :activeSiteMenu="activeSiteMenu"
       @leavingServices="close"
     />
   </header>
@@ -80,6 +81,7 @@ export default {
     return {
       isSiteMenuHidden: 'true',
       overSiteMenu: false,
+      activeSiteMenu: '',
       arrowOfSet: 0,
     };
   },
@@ -94,6 +96,7 @@ export default {
     overNavLink(navlink) {
       this.isSiteMenuHidden = 'false';
       this.arrowOfSet = this.getCenter(navlink);
+      this.activeSiteMenu = navlink;
     },
     leaveSiteMenu() {
       setTimeout(() => {

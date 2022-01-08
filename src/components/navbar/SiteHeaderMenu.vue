@@ -3,8 +3,11 @@
     <div class="SiteHeader__arrow" :style="arrowTransform"></div>
     <div class="SiteMenu SiteHeader__menu" @mouseover="overSiteMenu" @mouseleave="leaveSiteMenu">
       <div class="Card Card--shadowXLarge SiteMenu__card" ref="siteMenuCard">
-        <div class="SiteMenu__section" ref="siteMenu">
+        <div :class="giveLayoutClass('serviceLink')" ref="serviceLink">
           <SiteServiceNavLayout />
+        </div>
+        <div :class="giveLayoutClass('galleryLink')" ref="galleryLink">
+          <SiteGalleryHeader />
         </div>
       </div>
     </div>
@@ -13,6 +16,7 @@
 
 <script>
 import SiteServiceNavLayout from './SiteServiceNavLayout.vue';
+import SiteGalleryHeader from './SiteGalleryHeader.vue';
 
 export default {
   name: 'SiteHeaderMenu',
@@ -21,9 +25,11 @@ export default {
   }),
   props: {
     offset: Number,
+    activeSiteMenu: String,
   },
   components: {
     SiteServiceNavLayout,
+    SiteGalleryHeader,
   },
   computed: {
     arrowTransform() {
@@ -38,11 +44,11 @@ export default {
   destroyed() {
     window.removeEventListener('resize', this.resizeEventHandler);
   },
-  mounted() {
-    this.setCardWidth(this.getWidth('siteMenu') + 'px', this.getHeight('siteMenu') + 'px');
-  },
   updated() {
-    this.setCardWidth(this.getWidth('siteMenu') + 'px', this.getHeight('siteMenu') + 'px');
+    this.setCardWidth(
+      this.getWidth(this.activeSiteMenu) + 'px',
+      this.getHeight(this.activeSiteMenu) + 'px'
+    );
   },
   methods: {
     overSiteMenu() {
@@ -54,9 +60,12 @@ export default {
       this.$emit('leavingServices', this.value);
     },
     getHeight(el) {
+      if (this.$refs[el] === undefined) return;
+      console.log(this.$refs[el].clientHeight);
       return this.$refs[el].clientHeight;
     },
     getWidth(el) {
+      if (this.$refs[el] === undefined) return;
       return this.$refs[el].clientWidth;
     },
     setCardWidth(width, height) {
@@ -64,8 +73,19 @@ export default {
       this.$refs.siteMenuCard.style.height = height;
     },
     resizeEventHandler() {
-      let width = this.getWidth('siteMenu') + 'px';
-      this.setCardWidth(width, '375px');
+      let width = this.getWidth(this.activeSiteMenu) + 'px';
+      let height = this.getHeight(this.activeSiteMenu) + 'px';
+      this.setCardWidth(width, height);
+    },
+    giveLayoutClass(link) {
+      let addClass = 'SiteMenu__section';
+      if (link === 'serviceLink' && link !== this.activeSiteMenu) {
+        addClass = 'SiteMenu__section SiteMenu__section--left';
+      }
+      if (link === 'galleryLink' && link !== this.activeSiteMenu) {
+        addClass = 'SiteMenu__section SiteMenu__section--right';
+      }
+      return addClass;
     },
   },
 };
@@ -207,5 +227,15 @@ export default {
   transition: var(--siteMenuTransition);
   transition-property: transform, opacity;
   will-change: transform, opacity;
+}
+
+.SiteMenu__section--left {
+  --siteMenuSectionOffset: -150px;
+  opacity: 0;
+}
+
+.SiteMenu__section--right {
+  --siteMenuSectionOffset: 150px;
+  opacity: 0;
 }
 </style>

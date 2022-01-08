@@ -1,7 +1,5 @@
 <template>
-  <div class="HomePageGradient__container">
-    <img src="./../../assets/img/home_gradient.jpg" alt="" />
-  </div>
+  <div class="HomePageGradient__container"></div>
 </template>
 
 <script>
@@ -19,11 +17,8 @@ export default {
   height: 100%;
   min-width: 100%;
   right: 16px;
+  background-image: url('./../../assets/img/home_gradient.jpg');
+	background-size: cover;
 	z-index: -1;
-}
-
-img {
-  width: inherit;
-  height: inherit;
 }
 </style>
