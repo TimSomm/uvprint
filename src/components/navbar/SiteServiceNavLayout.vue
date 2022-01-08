@@ -1,19 +1,18 @@
 <template>
-  
-    <section class="SiteMenuSection">
-      <div class="SiteMenuSection__body">
-        <div class="SiteServiceNav__layout">
-          <div v-for="data in datas" v-bind:key="data.title">
-            <SiteServiceNavSection
-              :title="data.title"
-              :label="data.label"
-              :body="data.body"
-              :logo="data.logo"
-            />
-          </div>
+  <section class="SiteMenuSection">
+    <div class="SiteMenuSection__body">
+      <div class="SiteServiceNav__layout">
+        <div v-for="data in datas" v-bind:key="data.title">
+          <SiteServiceNavSection
+            :title="data.title"
+            :label="data.label"
+            :body="data.body"
+            :logo="data.logo"
+          />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -30,20 +29,30 @@ export default {
             'Nyomtatás, készítés',
             'Kamion dekoráció',
             'Óriásplakát nyomtatás',
-            'Zászló nyomtatás',
+            'Hurkolt poliészter, textil alapanyag',
           ],
           logo: ['molino.png', 'tarp.png', 'placard.png', 'flag.png'],
         },
         {
           title: 'Reklámtábla, matrica',
           label: ['Laminált és plexi', 'Kirakat matrica', 'Hozott anyagra', 'Öntapadó fólia'],
-          body: ['Reklámtáblák', '', 'Nyomtatás', 'Autó és dekor matrica'],
+          body: [
+            'Reklámtáblák',
+            'Kirakat matrica öntapadós fóliából',
+            'Nyomtatás',
+            'Autó és dekor matrica',
+          ],
           logo: ['sign.png', 'sticker.png', 'fabric.png', 'car.png'],
         },
         {
           title: 'Egyéb',
           label: ['Laminálás', 'Roll-Up film', 'Koncertek', 'Standok'],
-          body: ['', 'Nyomtatás', 'Fesztiválok, Programok dekorációja', 'Színpadok, Rendezvények'],
+          body: [
+            'Hideg- és meleg laminálás',
+            'Nyomtatás',
+            'Fesztiválok, Programok dekorációja',
+            'Színpadok, Rendezvények',
+          ],
           logo: ['laminate.png', 'rollup.png', 'concert.png', 'booth.png'],
         },
       ],
@@ -57,7 +66,6 @@ export default {
 </script>
 
 <style scoped>
-
 .SiteMenuSection {
   --siteMenuSpacing: 24px;
   position: relative;

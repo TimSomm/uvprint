@@ -31,16 +31,18 @@ export default {
         transform: 'translateY(0) translateX(' + this.offset + 'px) rotate(45deg)',
       };
     },
-    siteMenuDimensions() {
-      return {
-        width: this.getWidth('siteMenu') + 'px',
-        height: this.getHeight('siteMenu') + 'px',
-      };
-    },
+  },
+  created() {
+    window.addEventListener('resize', this.resizeEventHandler);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resizeEventHandler);
   },
   mounted() {
-    this.$refs.siteMenuCard.style.width = this.siteMenuDimensions.width;
-    this.$refs.siteMenuCard.style.height = this.siteMenuDimensions.height;
+    this.setCardWidth(this.getWidth('siteMenu') + 'px', this.getHeight('siteMenu') + 'px');
+  },
+  updated() {
+    this.setCardWidth(this.getWidth('siteMenu') + 'px', this.getHeight('siteMenu') + 'px');
   },
   methods: {
     overSiteMenu() {
@@ -56,6 +58,14 @@ export default {
     },
     getWidth(el) {
       return this.$refs[el].clientWidth;
+    },
+    setCardWidth(width, height) {
+      this.$refs.siteMenuCard.style.width = width;
+      this.$refs.siteMenuCard.style.height = height;
+    },
+    resizeEventHandler() {
+      let width = this.getWidth('siteMenu') + 'px';
+      this.setCardWidth(width, '375px');
     },
   },
 };

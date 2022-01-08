@@ -31,7 +31,7 @@ export default {
   --siteNavIconSize: 32px;
   --siteNavIconSpacing: 14px;
   --siteNavListSpacing: 32px;
-  --siteNavListMinWidth: 200px;
+  --siteNavListMinWidth: 15vw;
 }
 
 .SiteServiceList__list {
@@ -44,7 +44,7 @@ export default {
 
 .SiteServiceList__title {
   margin-bottom: var(--siteNavListSpacing);
-  font: var(--fontWeightBold) 13px / 1.5 var(--fontFamily);
+  font: var(--fontWeightBold) 14px / 1.5 var(--fontFamily);
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #8898aa;

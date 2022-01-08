@@ -8,9 +8,6 @@
         <nav class="SiteHeader__nav" @mouseleave="leaveHeader">
           <ul class="SiteHeader__navList">
             <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link">Főoldal</button>
-            </li>
-            <li class="SiteHeader__navItem">
               <button
                 ref="serviceLink"
                 class="SiteHeader__navItem_link"
@@ -29,6 +26,9 @@
               >
                 Partnerek
               </button>
+            </li>
+            <li class="SiteHeader__navItem">
+              <button class="SiteHeader__navItem_link">Galéria</button>
             </li>
             <li class="SiteHeader__navItem">
               <button class="SiteHeader__navItem_link">Kapcsolat</button>
@@ -181,7 +181,7 @@ export default {
 .SiteHeader__logo {
   display: block;
   max-width: 160px;
-  height: 40px;
+  height: 50px;
 }
 
 nav {
@@ -214,7 +214,7 @@ nav {
 .SiteHeader__navItem_link,
 .SiteHeader__navItem_link.Link {
   padding: 10px 20px;
-  font: var(--fontWeightBold) 15px / 1.6 var(--fontFamily);
+  font: var(--fontWeightBold) 20px / 1.6 var(--fontFamily);
   letter-spacing: 0.2px;
   color: var(--navColor);
   cursor: pointer;
@@ -259,10 +259,6 @@ nav {
 @media (min-width: 900px) {
   .SiteHeader {
     --mobileNavDisplay: none;
-  }
-
-  .SiteHeader__navContainer {
-    padding: 12px var(--columnPaddingNormal);
   }
 }
 

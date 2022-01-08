@@ -2,18 +2,21 @@
 	<div id="app">
 		<SiteHeader />
 		<HomePageGradient />
+		<SitePartnerNavSection />
 	</div>
 </template>
 
 <script>
 import SiteHeader from './components/navbar/SiteHeader.vue';
 import HomePageGradient from './components/gradient/HomePageGradient.vue';
+import SitePartnerNavSection from './components/navbar/SitePartnerNavSection.vue'
 
 export default {
 	name: 'App',
 	components: {
 		SiteHeader,
 		HomePageGradient,
+		SitePartnerNavSection
 	},
 };
 </script>
@@ -25,7 +28,7 @@ html {
 	--fontFamily: 'Encode Sans', 'Helvetica Neue', 'Arial', sans-serif;
 	--fontWeightLight: 200;
 	--fontWeightNormal: 300;
-	--fontWeightSemiBold: 400;
+	--fontWeightSemiBold: 425;
 	--fontWeightBold: 600;
 	--navColor: #fff;
 	--navLogoWidth: 160px;
@@ -33,7 +36,7 @@ html {
 	--gutterWidth: 16px;
 	--windowWidth: calc(100vw - var(--scrollbarWidth));
 	--layoutWidth: calc(var(--windowWidth) - var(--gutterWidth) * 2);
-	--layoutWidthMax: 1080px;
+	--layoutWidthMax: 60%;
 	--columnPaddingNormal: 16px;
 	--hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
 	--cardBorderRadius: 8px;
