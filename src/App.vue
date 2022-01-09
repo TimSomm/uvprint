@@ -21,9 +21,11 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
 html {
-  --fontFamily: 'Encode Sans', 'Helvetica Neue', 'Arial', sans-serif;
+  --fontFamily: 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif;
+  --fontFamilyNav: 'Encode Sans', 'Helvetica Neue', 'Arial', sans-serif;
   --fontWeightLight: 200;
   --fontWeightNormal: 300;
   --fontWeightSemiBold: 425;

@@ -6,7 +6,9 @@
       </div>
       <div class="SiteHeader__galleryTextContainer">
         <div class="SiteHeader__galleryLabelContainer">
-          {{ data.label }}
+          <span class="title">
+            {{ data.label }}
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="HoverArrow HoverArrow--sizeSmall SiteNavItem__arrow"
@@ -49,7 +51,16 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 40vw;
-  font: var(--fontWeightSemiBold) 20px / 1.4 var(--fontFamily);
+  font: var(--fontWeightSemiBold) 20px / 1.4 var(--fontFamilyNav);
+}
+
+.SiteHeader__galleryLabelContainer {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-right: 10px;
 }
 
 .SiteHeader__galleryIconContainer {
@@ -69,19 +80,16 @@ a {
 }
 
 .HoverArrow {
-  --arrowSpacing: 5px;
   --arrowHoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
   --arrowLineOpacity: 0;
   position: relative;
   top: 1px;
-  margin-left: var(--arrowSpacing);
   stroke-width: 2px;
   opacity: 0;
   vertical-align: middle;
 }
 
 .HoverArrow--sizeSmall {
-  --arrowSpacing: 4px;
   stroke-width: 1.5px;
 }
 
@@ -93,5 +101,21 @@ a {
 a:hover .HoverArrow,
 a:hover .SiteHeader__galleryBodyContainer {
   opacity: 1;
+}
+
+a:hover .HoverArrow {
+  animation: 1s infinite jumpRight cubic-bezier(0.25, -0.5, 0.17, 1.2);
+}
+
+@keyframes jumpRight {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 </style>

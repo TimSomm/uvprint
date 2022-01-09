@@ -92,6 +92,7 @@ export default {
 .all_pictures {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -129,5 +130,21 @@ hr {
 .all_pictures:hover .HoverArrow,
 .all_pictures:hover .SiteHeader__galleryBodyContainer {
   opacity: 1;
+}
+
+.all_pictures:hover .HoverArrow {
+  animation: 1s infinite jumpRight cubic-bezier(0.25, -0.5, 0.17, 1.2);
+}
+
+@keyframes jumpRight {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 </style>

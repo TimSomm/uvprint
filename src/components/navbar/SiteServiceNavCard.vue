@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .SiteServiceItem {
   margin-left: 0;
-  font: var(--fontWeightNormal) 14px / 1.4 var(--fontFamily);
+  font: var(--fontWeightNormal) 14px / 1.4 var(--fontFamilyNav);
   letter-spacing: 0.2px;
 }
 
@@ -105,6 +105,10 @@ a {
   opacity: 1;
 }
 
+.SiteServiceItem__link:hover .HoverArrow {
+  animation: 1s infinite jumpRight cubic-bezier(0.25, -0.5, 0.17, 1.2);
+}
+
 .SiteServiceItem__body {
   color: inherit;
   opacity: 0.6;
@@ -113,10 +117,21 @@ a {
   white-space: nowrap;
 }
 
-@media (min-width: 1200px) {
-  .SiteServiceItem {
-    font: var(--fontWeightNormal) 20px / 1.4 var(--fontFamily);
+@keyframes jumpRight {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 
+@media (min-width: 1200px) {
+  .SiteServiceItem {
+    font: var(--fontWeightNormal) 20px / 1.4 var(--fontFamilyNav);
+  }
+}
 </style>
