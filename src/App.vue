@@ -9,15 +9,14 @@
 <script>
 import SiteHeader from './components/navbar/SiteHeader.vue';
 import HomePageGradient from './components/gradient/HomePageGradient.vue';
-import HeroSection from './components/sections/HeroSection.vue'
-
+import HeroSection from './components/sections/HeroSection.vue';
 
 export default {
   name: 'App',
   components: {
     SiteHeader,
     HomePageGradient,
-    HeroSection
+    HeroSection,
   },
 };
 </script>
@@ -47,7 +46,7 @@ html {
   --cardShadowXLargeMargin: 48px;
 }
 
-@media (min-width: 1112px) {
+@media (min-width: 1200px) {
   :root {
     --layoutWidth: var(--layoutWidthMax);
     --gutterWidth: calc(var(--windowWidth) / 2 - var(--layoutWidth) / 2);
@@ -59,6 +58,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  overflow: hidden;
 }
 
 *,
