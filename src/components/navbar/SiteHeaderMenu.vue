@@ -61,7 +61,6 @@ export default {
     },
     getHeight(el) {
       if (this.$refs[el] === undefined) return;
-      console.log(this.$refs[el].clientHeight);
       return this.$refs[el].clientHeight;
     },
     getWidth(el) {
@@ -232,10 +231,12 @@ export default {
 .SiteMenu__section--left {
   --siteMenuSectionOffset: -150px;
   opacity: 0;
+  pointer-events: none;
 }
 
 .SiteMenu__section--right {
   --siteMenuSectionOffset: 150px;
   opacity: 0;
+  pointer-events: none;
 }
 </style>

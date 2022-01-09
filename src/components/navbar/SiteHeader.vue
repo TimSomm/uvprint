@@ -5,7 +5,7 @@
         <a href="#" class="SiteHeader__logoLink">
           <img src="./../../assets/img/logo.gif" alt="logo" class="SiteHeader__logo" />
         </a>
-        <nav class="SiteHeader__nav" @mouseleave="leaveHeader">
+        <nav class="SiteHeader__nav" @mouseover="overHeader = true" @mouseleave="leaveHeader">
           <ul class="SiteHeader__navList">
             <li class="SiteHeader__navItem">
               <button
@@ -33,13 +33,11 @@
             <li class="SiteHeader__navItem">
               <button class="SiteHeader__navItem_link">Kapcsolat</button>
             </li>
-            <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link SiteHeader__langNav">
-                <img src="./../../assets/img/en.png" alt="en" />
-              </button>
-            </li>
           </ul>
         </nav>
+        <button class="SiteHeader__navItem_link SiteHeader__langNav">
+          <img src="./../../assets/img/en.png" alt="en" />
+        </button>
         <div class="SiteHeader__menuNav">
           <a
             class="MenuButton"
@@ -81,6 +79,7 @@ export default {
     return {
       isSiteMenuHidden: 'true',
       overSiteMenu: false,
+      overHeader: false,
       activeSiteMenu: '',
       arrowOfSet: 0,
     };
@@ -106,6 +105,7 @@ export default {
       }, 250);
     },
     leaveHeader() {
+      this.overHeader = false;
       this.leaveSiteMenu();
     },
     close(event) {
@@ -204,7 +204,8 @@ nav {
   transition: all 200ms ease;
 }
 
-.SiteHeader__navItem:hover {
+.SiteHeader__navItem:hover,
+.SiteHeader__navItem_link:hover {
   opacity: var(--linkHoverOpacity);
 }
 
@@ -227,11 +228,14 @@ nav {
   background-color: transparent;
   border: none;
   outline: none;
+  transition: all 200ms ease;
 }
 
 .SiteHeader__langNav {
-  display: flex;
+  display: var(--desktopNavDisplay, flex);
   align-items: center;
+  justify-content: center;
+  width: 155px;
 }
 
 .SiteHeader__langNav img {
