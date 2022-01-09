@@ -71,6 +71,7 @@ export default {
   --marquee-elements-displayed: 4;
   --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
   --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  padding-bottom: 2rem;
 }
 
 .marquee {
@@ -107,7 +108,7 @@ export default {
 }
 
 .marquee-content li img {
-  height: 100%;
+  width: 80%;
   display: block;
   padding: 2px;
 }
