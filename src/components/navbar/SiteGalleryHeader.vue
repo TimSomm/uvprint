@@ -98,7 +98,7 @@ export default {
 a {
   text-decoration: none;
   color: #0a2540;
-  font: var(--fontWeightSemiBold) 20px / 1.4 var(--fontFamily);
+  font: var(--fontWeightSemiBold) 16px / 1.4 var(--fontFamily);
 }
 
 hr {

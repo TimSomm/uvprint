@@ -121,7 +121,7 @@ a:hover .HoverArrow {
 
 @media (min-width: 1200px) {
   .SiteHeader__galleryTextContainer {
-    font: var(--fontWeightNormal) 20px / 1.4 var(--fontFamilyNav);
+    font: var(--fontWeightNormal) 16px / 1.4 var(--fontFamilyNav);
   }
 }
 </style>

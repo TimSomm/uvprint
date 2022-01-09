@@ -2,12 +2,14 @@
   <div id="app">
     <SiteHeader />
     <HomePageGradient />
+    <HeroSection />
   </div>
 </template>
 
 <script>
 import SiteHeader from './components/navbar/SiteHeader.vue';
 import HomePageGradient from './components/gradient/HomePageGradient.vue';
+import HeroSection from './components/sections/HeroSection.vue'
 
 
 export default {
@@ -15,6 +17,7 @@ export default {
   components: {
     SiteHeader,
     HomePageGradient,
+    HeroSection
   },
 };
 </script>

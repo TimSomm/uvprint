@@ -131,7 +131,7 @@ a {
 
 @media (min-width: 1200px) {
   .SiteServiceItem {
-    font: var(--fontWeightNormal) 20px / 1.4 var(--fontFamilyNav);
+    font: var(--fontWeightNormal) 16px / 1.4 var(--fontFamilyNav);
   }
 }
 </style>

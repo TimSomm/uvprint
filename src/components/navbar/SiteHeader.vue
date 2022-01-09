@@ -196,7 +196,7 @@ export default {
   --siteMenuArrowSpacing: 13px;
   --siteMenuArrowOffset: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--backgroundColor);
 }
 
@@ -233,7 +233,7 @@ export default {
 .SiteHeader__logo {
   display: block;
   max-width: 160px;
-  height: 50px;
+  height: 40px;
 }
 
 nav {
@@ -267,7 +267,7 @@ nav {
 .SiteHeader__navItem_link,
 .SiteHeader__navItem_link.Link {
   padding: 10px 20px;
-  font: var(--fontWeightBold) 20px / 1.6 var(--fontFamily);
+  font: var(--fontWeightBold) 16px / 1.6 var(--fontFamily);
   letter-spacing: 0.2px;
   color: var(--navColor);
   cursor: pointer;
