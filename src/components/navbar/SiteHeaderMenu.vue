@@ -53,11 +53,11 @@ export default {
   methods: {
     overSiteMenu() {
       this.value = true;
-      this.$emit('leavingServices', this.value);
+      this.$emit('leavingMenu', this.value);
     },
     leaveSiteMenu() {
       this.value = false;
-      this.$emit('leavingServices', this.value);
+      this.$emit('leavingMenu', this.value);
     },
     getHeight(el) {
       if (this.$refs[el] === undefined) return;
@@ -91,44 +91,6 @@ export default {
 </script>
 
 <style scoped>
-.theme--White {
-  --backgroundColor: #fff;
-  --linkColor: var(--accentColor);
-  --linkHoverColor: #0a2540;
-  --buttonColor: var(--accentColor);
-  --buttonHoverColor: #0a2540;
-  --buttonDisabledColor: #cfd7df;
-  --buttonDisabledOpacity: 0.7;
-  --knockoutColor: #fff;
-  --knockoutDisabledColor: #8898aa;
-  --guideSolidColor: rgba(66, 71, 112, 0.06);
-  --guideDashedColor: rgba(66, 71, 112, 0.09);
-  --titleColor: #0a2540;
-  --textColor: #425466;
-  --inputBackground: #f1f4f7;
-  --inputPlaceholderColor: #acb9c5;
-  --inputTextColor: #0a2540;
-  --inputErrorAccentColor: #ff5191;
-  --annotationColor: #8c9eb1;
-  --maskFadeColor: rgba(0, 0, 0, 0.4);
-  --navColor: #0a2540;
-  --navHoverColor: #0a2540;
-  --navHoverOpacity: 0.6;
-  --footerColor: #0a2540;
-  --cardBorderColor: #cbd6e0;
-  --cardBackground: #fff;
-  --subcardBackground: #f6f9fc;
-  --gridSubcardBackground: #f6f9fc;
-  --tableIconColor: #8c9eb1;
-  --stripeAccentWhite: #fff;
-  --stripeAccentLight: #e3e7ec;
-  --stripeAccentDark: #0a2540;
-  --bulletColor: #cfd7df;
-  --footnoteTextColor: #4d5b78;
-  --disclaimerTextColor: #707f98;
-  --inlineCodeTextColor: #2c3a57;
-  --inlineCodeBackground: #e6ecf2;
-}
 
 .SiteHeader__menuContainer {
   display: var(--desktopNavDisplay, block);

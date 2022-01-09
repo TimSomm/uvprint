@@ -39,11 +39,11 @@
           <img src="./../../assets/img/en.png" alt="en" />
         </button>
         <div class="SiteHeader__menuNav">
-          <a
+          <button
             class="MenuButton"
-            href="#"
             title="Open mobile navigation"
             data-js-target="SiteHeader.menuButton"
+            v-on:click="openMobileMenu()"
           >
             <svg width="16" height="10" viewBox="0 0 16 10">
               <title>Open mobile navigation</title>
@@ -53,31 +53,35 @@
                 <rect width="16" height="2" rx="1"></rect>
               </g>
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </div>
+    <SiteHeaderMobileMenu :isHidden="isMobileSiteMenuHidden" @leavingMobileMenu="closeMobileMenu" />
     <SiteHeaderMenu
       id="SiteHeaderMenu"
       :aria-hidden="isSiteMenuHidden"
       :offset="arrowOfSet"
       :activeSiteMenu="activeSiteMenu"
-      @leavingServices="close"
+      @leavingMenu="closeDesktopMenu"
     />
   </header>
 </template>
 
 <script>
 import SiteHeaderMenu from './SiteHeaderMenu.vue';
+import SiteHeaderMobileMenu from './SiteHeaderMobileMenu.vue';
 
 export default {
   name: 'SiteHeader',
   components: {
     SiteHeaderMenu,
+    SiteHeaderMobileMenu,
   },
   data() {
     return {
       isSiteMenuHidden: 'true',
+      isMobileSiteMenuHidden: 'true',
       overSiteMenu: false,
       overHeader: false,
       activeSiteMenu: '',
@@ -108,9 +112,15 @@ export default {
       this.overHeader = false;
       this.leaveSiteMenu();
     },
-    close(event) {
+    closeDesktopMenu(event) {
       this.overSiteMenu = event;
       this.leaveSiteMenu();
+    },
+    openMobileMenu() {
+      this.isMobileSiteMenuHidden = 'false';
+    },
+    closeMobileMenu(event) {
+      this.isMobileSiteMenuHidden = event;
     },
   },
 };
@@ -142,12 +152,51 @@ export default {
   --stripeBackground: #fff;
 }
 
+.theme--White {
+  --backgroundColor: #fff;
+  --linkColor: var(--accentColor);
+  --linkHoverColor: #0a2540;
+  --buttonColor: var(--accentColor);
+  --buttonHoverColor: #0a2540;
+  --buttonDisabledColor: #cfd7df;
+  --buttonDisabledOpacity: 0.7;
+  --knockoutColor: #fff;
+  --knockoutDisabledColor: #8898aa;
+  --guideSolidColor: rgba(66, 71, 112, 0.06);
+  --guideDashedColor: rgba(66, 71, 112, 0.09);
+  --titleColor: #0a2540;
+  --textColor: #425466;
+  --inputBackground: #f1f4f7;
+  --inputPlaceholderColor: #acb9c5;
+  --inputTextColor: #0a2540;
+  --inputErrorAccentColor: #ff5191;
+  --annotationColor: #8c9eb1;
+  --maskFadeColor: rgba(0, 0, 0, 0.4);
+  --navColor: #0a2540;
+  --navHoverColor: #0a2540;
+  --navHoverOpacity: 0.6;
+  --footerColor: #0a2540;
+  --cardBorderColor: #cbd6e0;
+  --cardBackground: #fff;
+  --subcardBackground: #f6f9fc;
+  --gridSubcardBackground: #f6f9fc;
+  --tableIconColor: #8c9eb1;
+  --stripeAccentWhite: #fff;
+  --stripeAccentLight: #e3e7ec;
+  --stripeAccentDark: #0a2540;
+  --bulletColor: #cfd7df;
+  --footnoteTextColor: #4d5b78;
+  --disclaimerTextColor: #707f98;
+  --inlineCodeTextColor: #2c3a57;
+  --inlineCodeBackground: #e6ecf2;
+}
+
 .SiteHeader {
   --siteMenuTransition: 250ms;
   --siteMenuArrowSpacing: 13px;
   --siteMenuArrowOffset: 0;
   position: relative;
-  z-index: 100;
+  z-index: 1;
   background-color: var(--backgroundColor);
 }
 
@@ -257,6 +306,8 @@ nav {
   color: var(--knockoutColor);
   transition: var(--hoverTransition);
   transition-property: background-color, opacity;
+  border: none;
+  outline: none;
 }
 
 .MenuButton:hover {

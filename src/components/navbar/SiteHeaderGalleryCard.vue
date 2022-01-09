@@ -51,7 +51,7 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 40vw;
-  font: var(--fontWeightSemiBold) 20px / 1.4 var(--fontFamilyNav);
+  font: var(--fontWeightSemiBold) 14px / 1.4 var(--fontFamilyNav);
 }
 
 .SiteHeader__galleryLabelContainer {
@@ -116,6 +116,12 @@ a:hover .HoverArrow {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .SiteHeader__galleryTextContainer {
+    font: var(--fontWeightNormal) 20px / 1.4 var(--fontFamilyNav);
   }
 }
 </style>
