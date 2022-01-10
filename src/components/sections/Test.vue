@@ -43,9 +43,10 @@
     </div>
   </section>
 </template>
+
 <script>
 export default {
-  name: 'IntroductionSection',
+  name: 'Test',
 };
 </script>
 
@@ -69,16 +70,17 @@ export default {
   width: 100%;
   top: 0;
   left: 0;
-  transform-origin: 0 0;
-  transform: skewY(0);
-  background: #f6f9fc;
+  transform-origin: 100% 0;
+  transform: skewY(12deg);
+  background: #301934;
   overflow: hidden;
 }
 
 .IntroductionSection {
   position: relative;
   z-index: 1;
-  background-color: #f6f9fc;
+  color: #fff;
+  background: #301934;
 }
 
 .IntroductionSection__container {
@@ -91,8 +93,6 @@ export default {
   padding-inline: 32px;
   display: grid;
   row-gap: 110px;
-  padding-top: 10vh;
-  padding-bottom: 450px;
 }
 
 .IntroductionSection__header {
@@ -102,7 +102,6 @@ export default {
 
 .caption {
   font: 500 22px / 1.5 var(--fontFamily);
-  color: #5d3fd3;
 }
 
 .title {
@@ -146,9 +145,6 @@ export default {
 }
 
 @media (max-width: 900px) {
-  .IntroductionSection__layout {
-    padding-bottom: 200px;
-  }
   .IntroductionSection__contentContainer {
     grid-template-columns: repeat(1, 1fr);
   }

@@ -3,6 +3,7 @@
     <SiteHeader />
     <HeroSection />
     <IntroductionSection />
+    <Test />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import SiteHeader from './components/navbar/SiteHeader.vue';
 import HeroSection from './components/sections/HeroSection.vue';
 import IntroductionSection from './components/sections/IntroductionSection.vue';
+import Test from './components/sections/Test.vue';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     SiteHeader,
     HeroSection,
     IntroductionSection,
+    Test
   },
 };
 </script>
