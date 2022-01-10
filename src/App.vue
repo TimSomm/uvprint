@@ -2,18 +2,21 @@
   <div id="app">
     <SiteHeader />
     <HeroSection />
+    <IntroductionSection />
   </div>
 </template>
 
 <script>
 import SiteHeader from './components/navbar/SiteHeader.vue';
 import HeroSection from './components/sections/HeroSection.vue';
+import IntroductionSection from './components/sections/IntroductionSection.vue';
 
 export default {
   name: 'App',
   components: {
     SiteHeader,
     HeroSection,
+    IntroductionSection,
   },
 };
 </script>
@@ -41,6 +44,9 @@ html {
   --cardBorderRadius: 8px;
   --cardShadowXLarge: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
   --cardShadowXLargeMargin: 48px;
+  --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
+  --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
+  --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
 }
 
 @media (min-width: 1200px) {
@@ -64,5 +70,25 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.Guides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 var(--columnPaddingNormal);
+  pointer-events: none;
+}
+
+.GuidesContainer {
+  position: relative;
+  display: grid;
+  height: 100%;
+  max-width: var(--layoutWidth);
+  margin: 0 auto;
+  border-inline: 2px solid rgba(66, 71, 112, 0.06);
+  z-index: -1;
 }
 </style>

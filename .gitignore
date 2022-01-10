@@ -1,4 +1,5 @@
 .DS_Store
+.urls.xlsx
 node_modules
 /dist
 

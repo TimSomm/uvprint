@@ -21,6 +21,10 @@
         <div class="HeroImgContainer">
           <img src="./../../assets/img/herorollup.png" alt="printer" />
         </div>
+        <div class="HeroBtnContainer">
+          <a href="#" class="HeroSection__gallery-btn" role="button">Galéria</a>
+          <a href="#" class="HeroSection__contact-btn" role="button">Kapcsolat</a>
+        </div>
       </div>
     </div>
     <div class="HeroSection__gradientContainer">
@@ -42,11 +46,9 @@ export default {
 
 <style scoped>
 .HeroSection {
-  --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
-  --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
-  --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
   position: relative;
   z-index: 1;
+  padding-bottom: 10vh;
 }
 
 .HeroSection__gradientContainer {
@@ -64,33 +66,13 @@ export default {
   justify-content: center;
 }
 
-.Guides {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 0 var(--columnPaddingNormal);
-  pointer-events: none;
-}
-
-.GuidesContainer {
-  position: relative;
-  display: grid;
-  height: 100%;
-  max-width: var(--layoutWidth);
-  margin: 0 auto;
-  border-inline: 2px solid rgba(66, 71, 112, 0.06);
-  z-index: -1;
-}
-
 .HeroSection__layout {
   max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
-  padding-top: 150px;
   margin-top: 150px;
   padding-inline: 32px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 .HeroTextContainer {
@@ -134,6 +116,74 @@ export default {
   overflow: hidden;
 }
 
+.HeroBtnContainer {
+  margin-top: 64px;
+}
+
+.HeroSection__gallery-btn {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-right: 16px;
+}
+
+.HeroSection__gallery-btn:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.HeroSection__gallery-btn:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.HeroSection__contact-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  margin: 0;
+  outline: none;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.HeroSection__contact-btn:hover {
+  color: #fff;
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
 @media (min-width: 600px) {
   .HeroTitleContainer {
     --titleFontMin: 50;
@@ -145,7 +195,7 @@ export default {
 
 @media (max-width: 900px) {
   .HeroSection {
-    padding-block: 50px;
+    padding-top: 200px;
   }
 
   .HeroSection__layout {
