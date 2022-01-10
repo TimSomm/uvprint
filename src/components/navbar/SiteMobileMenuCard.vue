@@ -23,6 +23,8 @@ export default {
   margin-left: 0;
   font: var(--fontWeightNormal) 14px/1.428571429 var(--fontFamily);
   letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
 }
 
 a {
@@ -34,6 +36,7 @@ a {
   color: #0a2540;
   outline: none;
   padding: 6px;
+  align-items: center;
 }
 
 .SiteNavItem__iconContainer {
