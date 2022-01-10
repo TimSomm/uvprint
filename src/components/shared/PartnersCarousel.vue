@@ -4,7 +4,7 @@
       <div class="marquee">
         <ul class="marquee-content" ref="marqueeContent">
           <li v-for="logo in logos" v-bind:key="logo.img">
-            <img :src="require(`./../assets/img/${logo.img}`)" />
+            <img :src="require(`./../../assets/img/${logo.img}`)" />
           </li>
         </ul>
       </div>
@@ -66,11 +66,11 @@ export default {
 <style scoped>
 
 .SitePartnerSection__logoCarousel {
-  --marquee-width: 80vw;
+  --marquee-width: 100%;
   --marquee-height: 10vh;
-  --marquee-elements-displayed: 4;
+  --marquee-elements-displayed: 3;
   --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
   padding-bottom: 2rem;
 }
 

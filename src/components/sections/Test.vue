@@ -71,7 +71,7 @@ export default {
   top: 0;
   left: 0;
   transform-origin: 100% 0;
-  transform: skewY(12deg);
+  transform: skewY(6deg);
   background: #301934;
   overflow: hidden;
 }
@@ -93,6 +93,7 @@ export default {
   padding-inline: 32px;
   display: grid;
   row-gap: 110px;
+  padding-bottom: 10vh;
 }
 
 .IntroductionSection__header {
