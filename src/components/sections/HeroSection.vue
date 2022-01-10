@@ -1,61 +1,80 @@
 <template>
   <section class="HeroSection">
-    <div class="HeroSection__layout">
-      <div class="HeroTextContainer">
-        <div class="HeroTitleContainer">
-          <h1>Nagyméretű digitális nyomtatás</h1>
-        </div>
-        <div class="HeroBodyContainer">
-          <span
-            >A szakma élvonalában tevékenykedünk 1994 óta. Ismerjük az ügyfelek igényeit, és hosszú
-            távú létezésünk egyetlen záloga, ha ezeket az ügyféligényeket maximális értjük,
-            kiszolgáljuk, és felhívjuk az ügyfelek figyelmét az egyes összetett folyamatok buktatóira
-            is.</span
-          >
-        </div>
-      </div>
-      <div class="HeroImgContainer">
-        <img src="./../../assets/img/printer.png" alt="printer" />
-      </div>
+    <div class="Guides">
+      <div class="GuidesContainer"></div>
     </div>
-    <div class="HeroSection__partners">
-      <PartnersCarousel />
+    <div class="HeroSection__container">
+      <div class="HeroSection__layout">
+        <div class="HeroTextContainer">
+          <div class="HeroTitleContainer">
+            <h1>Nagyméretű digitális nyomtatás</h1>
+          </div>
+          <div class="HeroBodyContainer">
+            <span
+              >A szakma élvonalában tevékenykedünk 1994 óta. Ismerjük az ügyfelek igényeit, és hosszú
+              távú létezésünk egyetlen záloga, ha ezeket az ügyféligényeket maximális értjük,
+              kiszolgáljuk, és felhívjuk az ügyfelek figyelmét az egyes összetett folyamatok
+              buktatóira is.</span
+            >
+          </div>
+        </div>
+        <div class="HeroImgContainer">
+          <img src="./../../assets/img/printer.png" alt="printer" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import PartnersCarousel from './../PartnersCarousel.vue';
-
 export default {
   name: 'HeroSection',
-  components: {
-    PartnersCarousel,
-  },
 };
 </script>
 
 <style scoped>
 .HeroSection {
   --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
-  --layoutWidthMax: 1080px;
   --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
   --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
   z-index: 0;
 }
 
-.HeroSection__layout {
+.HeroSection__container {
   display: flex;
-  max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
+  justify-content: center;
+}
+
+.Guides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 var(--columnPaddingNormal);
+  pointer-events: none;
+}
+
+.GuidesContainer {
+  position: relative;
+  display: grid;
+  height: 100%;
+  max-width: var(--layoutWidth);
   margin: 0 auto;
+  border-inline: 1px solid rgba(66, 71, 112, 0.06);
+  z-index: -1;
+}
+
+.HeroSection__layout {
+  max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
   padding-block: 150px;
   margin-top: 150px;
+  padding-inline: 32px;
 }
 
 .HeroTextContainer {
   display: grid;
   row-gap: 64px;
-  padding-inline: 16px;
 }
 
 .HeroTitleContainer {
@@ -96,7 +115,7 @@ export default {
 @media (min-width: 600px) {
   .HeroTitleContainer {
     --titleFontMin: 50;
-    --titleFontMax: 84;
+    --titleFontMax: 75;
     --viewportMin: 600;
     --viewportMax: 1112;
   }
@@ -118,7 +137,7 @@ export default {
 
 @media (min-width: 1200px) {
   .HeroTitleContainer {
-    --titleFontSize: 84px;
+    --titleFontSize: 75px;
   }
 }
 </style>

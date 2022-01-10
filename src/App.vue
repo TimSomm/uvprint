@@ -38,7 +38,7 @@ html {
   --gutterWidth: 16px;
   --windowWidth: calc(100vw - var(--scrollbarWidth));
   --layoutWidth: calc(var(--windowWidth) - var(--gutterWidth) * 2);
-  --layoutWidthMax: 60%;
+  --layoutWidthMax: 1080px;
   --columnPaddingNormal: 16px;
   --hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
   --cardBorderRadius: 8px;
