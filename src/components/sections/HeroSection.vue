@@ -19,16 +19,24 @@
           </div>
         </div>
         <div class="HeroImgContainer">
-          <img src="./../../assets/img/printer.png" alt="printer" />
+          <img src="./../../assets/img/herorollup.png" alt="printer" />
         </div>
       </div>
+    </div>
+    <div class="HeroSection__gradientContainer">
+      <HomePageGradient />
     </div>
   </section>
 </template>
 
 <script>
+import HomePageGradient from './../gradient/HomePageGradient.vue';
+
 export default {
   name: 'HeroSection',
+  components: {
+    HomePageGradient,
+  },
 };
 </script>
 
@@ -37,7 +45,17 @@ export default {
   --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
   --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
   --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
-  z-index: 0;
+  z-index: 1;
+}
+
+.HeroSection__gradientContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: skewY(12deg) translateY(-50%);
+  z-index: -1;
 }
 
 .HeroSection__container {
@@ -70,6 +88,8 @@ export default {
   padding-block: 150px;
   margin-top: 150px;
   padding-inline: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .HeroTextContainer {
@@ -78,7 +98,7 @@ export default {
 }
 
 .HeroTitleContainer {
-  --titleFontMin: 40;
+  --titleFontMin: 37;
   --titleFontMax: 68;
   --viewportMin: 375;
   --viewportMax: 600;
@@ -94,6 +114,7 @@ export default {
   font: var(--bodyFont);
   max-width: var(--bodyMaxWidth);
   text-align: justify;
+  word-break: break-word;
 }
 
 .HeroImgContainer {
@@ -124,6 +145,11 @@ export default {
 @media (max-width: 900px) {
   .HeroSection {
     padding-block: 50px;
+  }
+
+  .HeroSection__layout {
+    margin-top: 0;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .HeroBodyContainer {
