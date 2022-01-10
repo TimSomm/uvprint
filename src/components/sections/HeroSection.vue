@@ -45,6 +45,7 @@ export default {
   --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
   --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
   --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
+  position: relative;
   z-index: 1;
 }
 
@@ -79,13 +80,13 @@ export default {
   height: 100%;
   max-width: var(--layoutWidth);
   margin: 0 auto;
-  border-inline: 1px solid rgba(66, 71, 112, 0.06);
+  border-inline: 2px solid rgba(66, 71, 112, 0.06);
   z-index: -1;
 }
 
 .HeroSection__layout {
   max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
-  padding-block: 150px;
+  padding-top: 150px;
   margin-top: 150px;
   padding-inline: 32px;
   display: grid;
