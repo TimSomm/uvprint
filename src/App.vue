@@ -53,6 +53,7 @@ html {
   --bodyFont: var(--fontWeightNormal) 20px / 1.555555556 var(--fontFamilyNav);
   --columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
   --bodyMaxWidth: calc(var(--columnMaxWidth) * 3);
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 1200px) {

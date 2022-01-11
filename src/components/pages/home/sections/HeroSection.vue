@@ -19,7 +19,7 @@
           <img src="./../../../../assets/img/herorollup.png" alt="printer" />
         </div>
         <div class="HeroBtnContainer">
-          <a href="#" class="HeroSection__gallery-btn" role="button">Galéria</a>
+          <a href="#gallerySection" class="HeroSection__gallery-btn" role="button">Galéria</a>
           <a href="#" class="HeroSection__contact-btn" role="button">Kapcsolat</a>
         </div>
       </div>
