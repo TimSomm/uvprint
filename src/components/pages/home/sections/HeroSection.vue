@@ -1,8 +1,5 @@
 <template>
   <section class="HeroSection">
-    <div class="Guides">
-      <div class="GuidesContainer"></div>
-    </div>
     <div class="HeroSection__container">
       <div class="HeroSection__layout">
         <div class="HeroTextContainer">
@@ -10,16 +7,16 @@
             <h1>Nagyméretű digitális nyomtatás</h1>
           </div>
           <div class="HeroBodyContainer">
-            <span
+            <p
               >A szakma élvonalában tevékenykedünk 1994 óta. Ismerjük az ügyfelek igényeit, és hosszú
               távú létezésünk egyetlen záloga, ha ezeket az ügyféligényeket maximális értjük,
               kiszolgáljuk, és felhívjuk az ügyfelek figyelmét az egyes összetett folyamatok
-              buktatóira is.</span
+              buktatóira is.</p
             >
           </div>
         </div>
         <div class="HeroImgContainer">
-          <img src="./../../assets/img/herorollup.png" alt="printer" />
+          <img src="./../../../../assets/img/herorollup.png" alt="printer" />
         </div>
         <div class="HeroBtnContainer">
           <a href="#" class="HeroSection__gallery-btn" role="button">Galéria</a>
@@ -34,7 +31,7 @@
 </template>
 
 <script>
-import HomePageGradient from './../gradient/HomePageGradient.vue';
+import HomePageGradient from './../../../gradient/HomePageGradient.vue';
 
 export default {
   name: 'HeroSection',

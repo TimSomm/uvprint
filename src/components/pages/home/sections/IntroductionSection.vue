@@ -4,9 +4,6 @@
       <div class="Section__backgroundMask">
         <div class="Section__background"></div>
       </div>
-      <div class="Guides">
-        <div class="GuidesContainer"></div>
-      </div>
       <div class="IntroductionSection__container">
         <div class="IntroductionSection__layout">
           <div class="IntroductionSection__header">
@@ -15,27 +12,27 @@
           </div>
           <div class="IntroductionSection__contentContainer">
             <div class="IntroductionSection__imgContainer">
-              <img src="./../../assets/img/introductionflag.png" alt="intro-flag" />
+              <img src="./../../../../assets/img/introductionflag.png" alt="intro-flag" />
             </div>
             <div class="IntroductionSection__bodyContainer">
-              <span>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
-              <span>
+              </p>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
-              <span>
+              </p>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
+              </p>
             </div>
           </div>
         </div>

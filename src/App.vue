@@ -1,25 +1,28 @@
 <template>
   <div id="app">
+    <Guides />
     <SiteHeader />
     <HeroSection />
     <IntroductionSection />
-    <Test />
+    <GallerySection />
   </div>
 </template>
 
 <script>
+import Guides from './components/shared/Guides.vue';
 import SiteHeader from './components/navbar/SiteHeader.vue';
-import HeroSection from './components/sections/HeroSection.vue';
-import IntroductionSection from './components/sections/IntroductionSection.vue';
-import Test from './components/sections/Test.vue';
+import HeroSection from './components/pages/home/sections/HeroSection.vue';
+import IntroductionSection from './components/pages/home/sections/IntroductionSection.vue';
+import GallerySection from './components/pages/home/sections/GallerySection.vue';
 
 export default {
   name: 'App',
   components: {
+    Guides,
     SiteHeader,
     HeroSection,
     IntroductionSection,
-    Test
+    GallerySection,
   },
 };
 </script>
@@ -65,6 +68,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   overflow: hidden;
+  position: relative;
 }
 
 *,
@@ -73,25 +77,5 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.Guides {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 0 var(--columnPaddingNormal);
-  pointer-events: none;
-}
-
-.GuidesContainer {
-  position: relative;
-  display: grid;
-  height: 100%;
-  max-width: var(--layoutWidth);
-  margin: 0 auto;
-  border-inline: 2px solid rgba(66, 71, 112, 0.06);
-  z-index: -1;
 }
 </style>

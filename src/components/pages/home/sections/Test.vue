@@ -4,9 +4,6 @@
       <div class="Section__backgroundMask">
         <div class="Section__background"></div>
       </div>
-      <div class="Guides">
-        <div class="GuidesContainer"></div>
-      </div>
       <div class="IntroductionSection__container">
         <div class="IntroductionSection__layout">
           <div class="IntroductionSection__header">
@@ -18,24 +15,24 @@
               <img src="./../../assets/img/introductionflag.png" alt="intro-flag" />
             </div>
             <div class="IntroductionSection__bodyContainer">
-              <span>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
-              <span>
+              </p>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
-              <span>
+              </p>
+              <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aut pariatur, repellat,
                 dolorem quam quas quis, illum dolor id minima nostrum eligendi. Consequuntur aperiam
                 tempora, omnis explicabo voluptates corrupti! Harum sit, perferendis ab dolorem
                 magnam obcaecati itaque odio nobis beatae!
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -51,30 +48,6 @@ export default {
 </script>
 
 <style scoped>
-.Section__masked {
-  overflow: hidden;
-}
-
-.Section__backgroundMask {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  z-index: -1;
-}
-
-.Section__background {
-  position: relative;
-  height: 100%;
-  max-height: none;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transform-origin: 100% 0;
-  transform: skewY(6deg);
-  background: #301934;
-  overflow: hidden;
-}
 
 .IntroductionSection {
   position: relative;
@@ -86,6 +59,7 @@ export default {
 .IntroductionSection__container {
   display: flex;
   justify-content: center;
+  min-width: var(--layoutWidth);
 }
 
 .IntroductionSection__layout {
