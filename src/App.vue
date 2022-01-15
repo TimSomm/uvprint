@@ -3,6 +3,7 @@
     <Guides />
     <SiteHeader />
     <HeroSection />
+    <PartnerSection />
     <IntroductionSection />
     <GallerySection />
   </div>
@@ -14,6 +15,7 @@ import SiteHeader from './components/navbar/SiteHeader.vue';
 import HeroSection from './components/pages/home/sections/HeroSection.vue';
 import IntroductionSection from './components/pages/home/sections/IntroductionSection.vue';
 import GallerySection from './components/pages/home/sections/GallerySection.vue';
+import PartnerSection from './components/pages/home/sections/PartnersSection.vue';
 
 export default {
   name: 'App',
@@ -23,6 +25,7 @@ export default {
     HeroSection,
     IntroductionSection,
     GallerySection,
+    PartnerSection
   },
 };
 </script>

@@ -7,12 +7,12 @@
             <h1>Nagyméretű digitális nyomtatás</h1>
           </div>
           <div class="HeroBodyContainer">
-            <p
-              >A szakma élvonalában tevékenykedünk 1994 óta. Ismerjük az ügyfelek igényeit, és hosszú
+            <p>
+              A szakma élvonalában tevékenykedünk 1994 óta. Ismerjük az ügyfelek igényeit, és hosszú
               távú létezésünk egyetlen záloga, ha ezeket az ügyféligényeket maximális értjük,
               kiszolgáljuk, és felhívjuk az ügyfelek figyelmét az egyes összetett folyamatok
-              buktatóira is.</p
-            >
+              buktatóira is.
+            </p>
           </div>
         </div>
         <div class="HeroImgContainer">
@@ -45,7 +45,6 @@ export default {
 .HeroSection {
   position: relative;
   z-index: 1;
-  padding-bottom: 10vh;
 }
 
 .HeroSection__gradientContainer {

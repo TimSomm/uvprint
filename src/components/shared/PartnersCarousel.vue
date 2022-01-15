@@ -68,7 +68,7 @@ export default {
 .SitePartnerSection__logoCarousel {
   --marquee-width: 100%;
   --marquee-height: 10vh;
-  --marquee-elements-displayed: 3;
+  --marquee-elements-displayed: 1;
   --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
   --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
   padding-bottom: 2rem;
@@ -108,7 +108,7 @@ export default {
 }
 
 .marquee-content li img {
-  width: 80%;
+  width: 100%;
   display: block;
   padding: 2px;
 }
