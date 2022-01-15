@@ -3,7 +3,7 @@
     <div class="SiteHeader__container">
       <div class="SiteHeader__navContainer">
         <a href="#" class="SiteHeader__logoLink">
-          <img src="./../../assets/img/logo.gif" alt="logo" class="SiteHeader__logo" />
+          <img src="./../../assets/img/logo.svg" alt="logo" class="SiteHeader__logo" />
         </a>
         <nav class="SiteHeader__nav" @mouseover="overHeader = true" @mouseleave="leaveHeader">
           <ul class="SiteHeader__navList">
@@ -233,7 +233,7 @@ export default {
 .SiteHeader__logo {
   display: block;
   max-width: 160px;
-  height: 40px;
+  height: 80px;
 }
 
 nav {
