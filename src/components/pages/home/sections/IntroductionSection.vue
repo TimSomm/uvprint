@@ -7,8 +7,8 @@
       <div class="IntroductionSection__container">
         <div class="IntroductionSection__layout">
           <div class="IntroductionSection__header">
-            <h2 class="caption">Lorem, ipsum.</h2>
-            <h1 class="title">Lorem ipsum dolor sit amet consectetur.</h1>
+            <h3 class="caption">Lorem, ipsum.</h3>
+            <h2 class="title">Lorem ipsum dolor sit amet consectetur.</h2>
           </div>
           <div class="IntroductionSection__contentContainer">
             <div class="IntroductionSection__imgContainer">
