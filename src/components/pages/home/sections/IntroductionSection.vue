@@ -89,7 +89,7 @@ export default {
   display: grid;
   row-gap: 110px;
   padding-top: 10vh;
-  padding-bottom: 450px;
+  padding-bottom: 250px;
 }
 
 .IntroductionSection__header {

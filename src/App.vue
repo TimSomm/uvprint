@@ -6,6 +6,7 @@
     <PartnerSection />
     <IntroductionSection />
     <GallerySection />
+    <ContactSection />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import HeroSection from './components/pages/home/sections/HeroSection.vue';
 import IntroductionSection from './components/pages/home/sections/IntroductionSection.vue';
 import GallerySection from './components/pages/home/sections/GallerySection.vue';
 import PartnerSection from './components/pages/home/sections/PartnersSection.vue';
+import ContactSection from './components/pages/home/sections/ContactSection.vue'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     HeroSection,
     IntroductionSection,
     GallerySection,
-    PartnerSection
+    PartnerSection,
+    ContactSection
   },
 };
 </script>

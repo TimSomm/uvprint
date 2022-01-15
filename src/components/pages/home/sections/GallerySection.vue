@@ -182,7 +182,6 @@ export default {
   position: relative;
   z-index: 1;
   color: #fff;
-  background: #301934;
 }
 
 .Section__masked {
@@ -199,8 +198,7 @@ export default {
 
 .Section__background {
   position: relative;
-  height: 100%;
-  min-height: 500px;
+  height: 115%;
   width: 100%;
   top: 0;
   left: 0;
@@ -348,6 +346,10 @@ export default {
   .img-6 {
     min-height: 15rem;
   }
+
+  .Section__background {
+    height: 110%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -370,6 +372,10 @@ export default {
 
   .img-6 {
     --imageSrc: url('./../../../../assets/img/img-6-mobile.jpg');
+  }
+
+  .Section__background {
+    height: 105%;
   }
 }
 </style>
