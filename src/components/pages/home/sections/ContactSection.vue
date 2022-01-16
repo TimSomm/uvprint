@@ -45,7 +45,7 @@
               </div>
             </div>
           </div>
-          <div class="ContactSection__form">
+          <!-- <div class="ContactSection__form">
             <form action="#">
               <div class="ContactSection__sendMailInputContainer">
                 <label for="fullname" class="ContactSection__sendMailLabel">Név</label>
@@ -103,7 +103,7 @@
               marginheight="0"
               marginwidth="0"
             ></iframe>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -276,7 +276,7 @@ img {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .ContactSection__infoGrid,
   .ContactSection__form,
   .ContactSection__form form,
@@ -285,5 +285,5 @@ img {
   .ContactSection__sendMailBtn {
     max-width: calc(100% - 64px - 32px);
   }
-}
+} */
 </style>
