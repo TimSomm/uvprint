@@ -135,6 +135,7 @@ export default {
     lightBoxHandler() {
       const html = document.querySelector('html');
       const gallerySection = document.getElementById('gallerySection');
+      const contactSection = document.getElementById('contactSection');
       const lightBox = document.getElementById('lightBox');
 
       const images = gallerySection.querySelectorAll('.galleryImg');
@@ -149,15 +150,17 @@ export default {
           while (lightBox.firstChild) {
             lightBox.removeChild(lightBox.firstChild);
           }
-          lightBox.appendChild(img);
+          contactSection.style.display = 'none';
           html.style.overflow = 'hidden';
+          lightBox.appendChild(img);
         });
       });
 
       lightBox.addEventListener('click', (e) => {
         if (e.target !== e.currentTarget) return;
-        lightBox.classList.remove('active');
+        contactSection.style.display = 'block';
         html.style.overflow = 'visible';
+        lightBox.classList.remove('active');
       });
     },
   },

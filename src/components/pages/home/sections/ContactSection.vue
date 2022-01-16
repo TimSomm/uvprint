@@ -1,5 +1,5 @@
 <template>
-  <section class="ContactSection">
+  <section class="ContactSection" id="contactSection">
     <div class="ContactSection__container">
       <div class="ContactSection__layout">
         <div class="ContactSection__contentGrid">
@@ -278,15 +278,4 @@ img {
     grid-column: span 1;
   }
 }
-
-/* @media (max-width: 480px) {
-  .ContactSection__infoGrid,
-  .ContactSection__form,
-  .ContactSection__form form,
-  .ContactSection__sendMailInputContainer,
-  .ContactSection__map,
-  .ContactSection__sendMailBtn {
-    max-width: calc(100% - 64px - 32px);
-  }
-} */
 </style>
