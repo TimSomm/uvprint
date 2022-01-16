@@ -133,6 +133,7 @@ export default {
   },
   methods: {
     lightBoxHandler() {
+      const html = document.querySelector('html');
       const gallerySection = document.getElementById('gallerySection');
       const lightBox = document.getElementById('lightBox');
 
@@ -149,12 +150,14 @@ export default {
             lightBox.removeChild(lightBox.firstChild);
           }
           lightBox.appendChild(img);
+          html.style.overflow = 'hidden';
         });
       });
 
       lightBox.addEventListener('click', (e) => {
         if (e.target !== e.currentTarget) return;
         lightBox.classList.remove('active');
+        html.style.overflow = 'visible';
       });
     },
   },
