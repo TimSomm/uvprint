@@ -96,11 +96,13 @@
           </div>
 
           <div class="ContactSection__map">
-            <google-map
-              :center="{ lat: 10, lng: 10 }"
-              :zoom="7"
-              style="width: 100%; height: 100%"
-            ></google-map>
+            <iframe
+              src="https://maps.google.com/maps?q=7150%20Bonyh%C3%A1d,%20Perczel%20utca%2080.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -159,13 +161,15 @@ export default {
   display: grid;
   row-gap: 32px;
   padding: 16px;
+  align-items: center;
 }
 
 .ContactSection__title {
-  font: 600 30px / 1.5 var(--fontFamily);
+  font: 600 38px / 1.5 var(--fontFamily);
 }
 
 .ContactSection__description {
+  font: 500 22px / 1.5 var(--fontFamily);
   font-style: italic;
 }
 
@@ -177,6 +181,7 @@ export default {
 
 .ContactSection__contactLabel {
   margin-left: 16px;
+  font: var(--bodyFont);
 }
 
 .ContactSection__form form {
@@ -192,6 +197,7 @@ export default {
 
 .ContactSection__sendMailLabel {
   margin-bottom: 16px;
+  font: var(--bodyFont);
 }
 
 .ContactSection__sendMailInput {
@@ -246,6 +252,13 @@ textarea {
 .ContactSection__map {
   min-height: 590px;
   grid-column: span 2;
+  width: 100%;
+  height: 100%;
+}
+
+.ContactSection__map iframe {
+  width: inherit;
+  height: inherit;
 }
 
 img {
