@@ -45,7 +45,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="ContactSection__form">
+          <div class="ContactSection__form">
             <form action="#">
               <div class="ContactSection__sendMailInputContainer">
                 <label for="fullname" class="ContactSection__sendMailLabel">Név</label>
@@ -95,6 +95,7 @@
             </form>
           </div>
 
+          
           <div class="ContactSection__map">
             <iframe
               src="https://maps.google.com/maps?q=7150%20Bonyh%C3%A1d,%20Perczel%20utca%2080.&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -103,7 +104,7 @@
               marginheight="0"
               marginwidth="0"
             ></iframe>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -206,6 +207,7 @@ export default {
   border-left: none;
   border-right: none;
   min-height: 50px;
+  width: 100%;
 }
 
 textarea {
