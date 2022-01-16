@@ -92,8 +92,14 @@
             </div>
             <button type="submit" class="ContactSection__sendMailBtn">Küldés</button>
           </form>
+          <div class="ContactSection__map">
+            <google-map
+              :center="{ lat: 10, lng: 10 }"
+              :zoom="7"
+              style="width: 100%; height: 100%"
+            ></google-map>
+          </div>
         </div>
-        <div class="ContactSection__map"></div>
       </div>
     </div>
   </section>
@@ -102,6 +108,23 @@
 <script>
 export default {
   name: 'ContactSection',
+  data() {
+    return {
+      coordinates: {
+        lat: 0,
+        lng: 0,
+      },
+    };
+  },
+  created() {
+    this.$getLocation({})
+      .then((coordinates) => {
+        this.coordinates = coordinates;
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  },
 };
 </script>
 
@@ -216,7 +239,6 @@ textarea {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
     0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
 }
-
 
 img {
   width: inherit;
