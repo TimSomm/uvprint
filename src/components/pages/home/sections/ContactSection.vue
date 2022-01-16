@@ -45,53 +45,56 @@
               </div>
             </div>
           </div>
-          <form action="#" class="ContactSection__form">
-            <div class="ContactSection__sendMailInputContainer">
-              <label for="fullname" class="ContactSection__sendMailLabel">Név</label>
-              <input
-                type="text"
-                name="fullname"
-                id="fullname"
-                placeholder="írja be a teljes nevét"
-                class="ContactSection__sendMailInput"
-                required
-              />
-            </div>
-            <div class="ContactSection__sendMailInputContainer">
-              <label for="email" class="ContactSection__sendMailLabel">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="írja be az e-mail címét"
-                class="ContactSection__sendMailInput"
-                required
-              />
-            </div>
-            <div class="ContactSection__sendMailInputContainer">
-              <label for="subject" class="ContactSection__sendMailLabel">Tárgy</label>
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="írja be az e-mail tárgyát"
-                class="ContactSection__sendMailInput"
-              />
-            </div>
-            <div class="ContactSection__sendMailInputContainer">
-              <label for="message" class="ContactSection__sendMailLabel">Üzenet</label>
-              <textarea
-                rows="4"
-                cols="50"
-                name="message"
-                id="message"
-                placeholder="írja be az üzenetet"
-                class="ContactSection__sendMailInput"
-                required
-              />
-            </div>
-            <button type="submit" class="ContactSection__sendMailBtn">Küldés</button>
-          </form>
+          <div class="ContactSection__form">
+            <form action="#">
+              <div class="ContactSection__sendMailInputContainer">
+                <label for="fullname" class="ContactSection__sendMailLabel">Név</label>
+                <input
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                  placeholder="írja be a teljes nevét"
+                  class="ContactSection__sendMailInput"
+                  required
+                />
+              </div>
+              <div class="ContactSection__sendMailInputContainer">
+                <label for="email" class="ContactSection__sendMailLabel">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="írja be az e-mail címét"
+                  class="ContactSection__sendMailInput"
+                  required
+                />
+              </div>
+              <div class="ContactSection__sendMailInputContainer">
+                <label for="subject" class="ContactSection__sendMailLabel">Tárgy</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="írja be az e-mail tárgyát"
+                  class="ContactSection__sendMailInput"
+                />
+              </div>
+              <div class="ContactSection__sendMailInputContainer">
+                <label for="message" class="ContactSection__sendMailLabel">Üzenet</label>
+                <textarea
+                  rows="4"
+                  cols="50"
+                  name="message"
+                  id="message"
+                  placeholder="írja be az üzenetet"
+                  class="ContactSection__sendMailInput"
+                  required
+                />
+              </div>
+              <button type="submit" class="ContactSection__sendMailBtn">Küldés</button>
+            </form>
+          </div>
+
           <div class="ContactSection__map">
             <google-map
               :center="{ lat: 10, lng: 10 }"
@@ -148,7 +151,7 @@ export default {
 
 .ContactSection__contentGrid {
   display: grid;
-  grid: auto/repeat(3, 1fr);
+  grid: auto/repeat(1, 1fr);
   gap: 16px;
 }
 
@@ -176,7 +179,7 @@ export default {
   margin-left: 16px;
 }
 
-.ContactSection__form {
+.ContactSection__form form {
   display: grid;
   row-gap: 32px;
   padding: 16px;
@@ -240,8 +243,34 @@ textarea {
     0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
+.ContactSection__map {
+  min-height: 590px;
+  grid-column: span 2;
+}
+
 img {
   width: inherit;
   height: inherit;
+}
+
+@media (max-width: 740px) {
+  .ContactSection__contentGrid {
+    grid: auto/repeat(1, 1fr);
+  }
+
+  .ContactSection__map {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .ContactSection__infoGrid,
+  .ContactSection__form,
+  .ContactSection__form form,
+  .ContactSection__sendMailInputContainer,
+  .ContactSection__map,
+  .ContactSection__sendMailBtn {
+    max-width: calc(100% - 64px - 32px);
+  }
 }
 </style>
