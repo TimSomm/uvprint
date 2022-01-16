@@ -1,5 +1,5 @@
 <template>
-  <section class="PartnersSection">
+  <section class="PartnersSection" id="partnersSection">
     <div class="PartnersSection__container">
       <div class="PartnersSection__layout">
         <div class="PartnersSection__partnerLayout">

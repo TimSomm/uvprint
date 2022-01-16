@@ -19,7 +19,7 @@ export default {
   left: 0;
   padding: 0 var(--columnPaddingNormal);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 2;
 }
 
 .GuidesContainer {

@@ -28,10 +28,10 @@
               </button>
             </li>
             <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link">Partnerek</button>
+              <a href="#partnersSection" class="SiteHeader__navItem_link">Partnerek</a>
             </li>
             <li class="SiteHeader__navItem">
-              <button class="SiteHeader__navItem_link">Kapcsolat</button>
+              <a href="#contactSection" class="SiteHeader__navItem_link">Kapcsolat</a>
             </li>
           </ul>
         </nav>
@@ -189,6 +189,10 @@ export default {
   --disclaimerTextColor: #707f98;
   --inlineCodeTextColor: #2c3a57;
   --inlineCodeBackground: #e6ecf2;
+}
+
+a {
+  text-decoration: none;
 }
 
 .SiteHeader {

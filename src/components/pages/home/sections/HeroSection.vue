@@ -20,7 +20,7 @@
         </div>
         <div class="HeroBtnContainer">
           <a href="#gallerySection" class="HeroSection__gallery-btn" role="button">Galéria</a>
-          <a href="#" class="HeroSection__contact-btn" role="button">Kapcsolat</a>
+          <a href="#contactSection" class="HeroSection__contact-btn" role="button">Kapcsolat</a>
         </div>
       </div>
     </div>
