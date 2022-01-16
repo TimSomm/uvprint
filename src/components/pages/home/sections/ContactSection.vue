@@ -189,6 +189,7 @@ export default {
   display: grid;
   row-gap: 32px;
   padding: 16px;
+  height: 100%;
 }
 
 .ContactSection__sendMailInputContainer {
