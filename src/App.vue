@@ -7,17 +7,19 @@
     <IntroductionSection />
     <GallerySection />
     <ContactSection />
+    <BottomNavSection />
   </div>
 </template>
 
 <script>
-import Guides from './components/shared/Guides.vue';
-import SiteHeader from './components/navbar/SiteHeader.vue';
-import HeroSection from './components/pages/home/sections/HeroSection.vue';
-import IntroductionSection from './components/pages/home/sections/IntroductionSection.vue';
-import GallerySection from './components/pages/home/sections/GallerySection.vue';
-import PartnerSection from './components/pages/home/sections/PartnersSection.vue';
-import ContactSection from './components/pages/home/sections/ContactSection.vue'
+import Guides from '@/components/shared/Guides.vue';
+import SiteHeader from '@/components/navbar/SiteHeader.vue';
+import HeroSection from '@/components/pages/home/sections/HeroSection.vue';
+import IntroductionSection from '@/components/pages/home/sections/IntroductionSection.vue';
+import GallerySection from '@/components/pages/home/sections/GallerySection.vue';
+import PartnerSection from '@/components/pages/home/sections/PartnersSection.vue';
+import ContactSection from '@/components/pages/home/sections/ContactSection.vue'
+import BottomNavSection from "@/components/pages/home/sections/BottomNavSection";
 
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     IntroductionSection,
     GallerySection,
     PartnerSection,
-    ContactSection
+    ContactSection,
+    BottomNavSection
   },
 };
 </script>

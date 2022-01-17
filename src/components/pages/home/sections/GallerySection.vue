@@ -12,8 +12,8 @@
           </div>
           <div class="GallerySection__galleryContainer">
             <div class="GallerySection__gallery">
-              <div href="#gallerySection" class="img-1 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-1 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -25,8 +25,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-2 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-2 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -38,8 +38,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-3 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-3 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -51,8 +51,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-4 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-4 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -64,8 +64,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-5 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-5 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -77,8 +77,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-6 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-6 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -90,8 +90,8 @@
                   />
                 </svg>
               </div>
-              <div href="#gallerySection" class="img-7 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <div class="img-7 galleryImg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"
@@ -104,7 +104,7 @@
                 </svg>
               </div>
               <div class="img-8 galleryImg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionic" viewBox="0 0 512 512">
                   <title>Expand</title>
                   <path
                     fill="none"

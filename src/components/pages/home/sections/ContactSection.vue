@@ -99,10 +99,6 @@
           <div class="ContactSection__map">
             <iframe
               src="https://maps.google.com/maps?q=7150%20Bonyh%C3%A1d,%20Perczel%20utca%2080.&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
             ></iframe>
           </div>
         </div>
@@ -148,7 +144,7 @@ export default {
 .ContactSection__layout {
   max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
   padding-inline: 32px;
-  padding-bottom: 10vh;
+  padding-bottom: 250px;
   margin-top: 200px;
 }
 
@@ -262,6 +258,7 @@ textarea {
 .ContactSection__map iframe {
   width: inherit;
   height: inherit;
+  border: 0;
 }
 
 img {
@@ -276,6 +273,10 @@ img {
 
   .ContactSection__map {
     grid-column: span 1;
+  }
+
+  .ContactSection__layout {
+    padding-bottom: 200px;
   }
 }
 </style>

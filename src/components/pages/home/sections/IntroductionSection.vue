@@ -132,16 +132,6 @@ export default {
   height: inherit;
 }
 
-.IntroductionSection__bgContainer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: skewY(12deg) translateY(100%);
-  z-index: -1;
-}
-
 @media (max-width: 900px) {
   .IntroductionSection__layout {
     padding-bottom: 200px;

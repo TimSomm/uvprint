@@ -106,12 +106,6 @@ export default {
   height: inherit;
 }
 
-.HeroSection__partners {
-  max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 .HeroBtnContainer {
   margin-top: 64px;
 }
