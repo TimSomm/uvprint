@@ -136,6 +136,7 @@ export default {
       const html = document.querySelector('html');
       const gallerySection = document.getElementById('gallerySection');
       const contactSection = document.getElementById('contactSection');
+      const bottomNavSection = document.getElementById('bottomNavSection');
       const lightBox = document.getElementById('lightBox');
 
       const images = gallerySection.querySelectorAll('.galleryImg');
@@ -151,6 +152,7 @@ export default {
             lightBox.removeChild(lightBox.firstChild);
           }
           contactSection.style.display = 'none';
+          bottomNavSection.style.display = 'none';
           html.style.overflow = 'hidden';
           lightBox.appendChild(img);
         });
@@ -159,6 +161,7 @@ export default {
       lightBox.addEventListener('click', (e) => {
         if (e.target !== e.currentTarget) return;
         contactSection.style.display = 'block';
+        bottomNavSection.style.display = 'block';
         html.style.overflow = 'visible';
         lightBox.classList.remove('active');
       });
