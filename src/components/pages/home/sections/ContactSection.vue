@@ -110,23 +110,6 @@
 <script>
 export default {
   name: 'ContactSection',
-  data() {
-    return {
-      coordinates: {
-        lat: 0,
-        lng: 0,
-      },
-    };
-  },
-  created() {
-    this.$getLocation({})
-      .then((coordinates) => {
-        this.coordinates = coordinates;
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  },
 };
 </script>
 

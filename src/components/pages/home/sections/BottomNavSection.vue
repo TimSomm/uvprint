@@ -9,6 +9,10 @@
           <div class="BottomNavSection__contentGrid">
             <div class="BottomNavSection__firstCol BottomNavSection__col">
               <h3 class="BottomNavSection__nameTitle">uvprint</h3>
+              <div class="BottomNavSection__copyright">
+                <span>© 2022 Timer Soma</span>
+                <span>+36 20/550-0809</span>
+              </div>
             </div>
             <div class="BottomNavSection__secondCol BottomNavSection__col">
               <div>
@@ -117,8 +121,20 @@ export default {
   padding-left: 32px;
 }
 
+.BottomNavSection__firstCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .BottomNavSection__nameTitle {
   text-transform: lowercase;
+  margin-bottom: 32px;
+}
+
+.BottomNavSection__copyright {
+  display: grid;
+  row-gap: 16px;
 }
 
 .BottomNavSection__secondCol {
