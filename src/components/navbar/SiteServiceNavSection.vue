@@ -1,6 +1,6 @@
 <template>
   <section class="SiteServiceList">
-    <h1 class="SiteServiceList__title">{{ title }}</h1>
+    <h2 class="SiteServiceList__title">{{ title }}</h2>
     <div>
       <ul v-for="(d, i) in logo" v-bind:key="d.title" class="SiteServiceList__list">
         <SiteServiceNavCard :logo="logo[i]" :label="label[i]" :body="body[i]" />

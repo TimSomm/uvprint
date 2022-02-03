@@ -8,7 +8,7 @@
       <div class="SiteMenuSection">
         <div class="SiteMenuSection__body">
           <section class="SiteNavList">
-            <h1 class="SiteNavList__title">Szolgáltatások</h1>
+            <h2 class="SiteNavList__title">Szolgáltatások</h2>
             <ul class="SiteNavList__list">
               <SiteMobileMenuCard v-for="data in serviceData" v-bind:key="data.label" :data="data" />
             </ul>
@@ -18,7 +18,7 @@
       <div class="SiteMenuSection">
         <div class="SiteMenuSection__body">
           <section class="SiteNavList">
-            <h1 class="SiteNavList__title">Galéria</h1>
+            <h2 class="SiteNavList__title">Galéria</h2>
             <ul class="SiteNavList__list">
               <SiteMobileMenuCard v-for="data in galleryData" v-bind:key="data.label" :data="data" />
             </ul>
@@ -28,7 +28,7 @@
       <div class="SiteMenuSection">
         <div class="SiteMenuSection__body">
           <section class="SiteNavList">
-            <h1 class="SiteNavList__title">Egyéb</h1>
+            <h2 class="SiteNavList__title">Egyéb</h2>
             <ul class="SiteNavList__list">
               <SiteMobileMenuCard
                 v-for="data in remainingNavData"
